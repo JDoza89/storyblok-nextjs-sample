@@ -4,24 +4,38 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev-https": "concurrently \"local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem\" \"next dev\"",
     "build": "next build",
     "start": "next start",
+    "start-https": "concurrently \"local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem\" \"next start\"",
     "lint": "next lint"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.6.1",
+    "@storyblok/react": "^4.6.1",
+    "@types/negotiator": "^0.6.3",
+    "@types/react-slick": "^0.23.13",
+    "@types/slick-carousel": "^1.6.40",
+    "negotiator": "^1.0.0",
+    "next": "15.3.2",
+    "next-i18n-router": "^5.5.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.2"
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1",
+    "storyblok-rich-text-react-renderer": "^3.0.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "concurrently": "^9.1.2",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }

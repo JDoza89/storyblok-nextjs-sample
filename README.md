@@ -1,3 +1,24 @@
+# Storyblok + Nextjs Sample App
+
+This app was created following the [Storyblok Nextjs Tutorial](https://www.storyblok.com/tp/nextjs-headless-cms-ultimate-tutorial) and modified to follow App Router best practices.
+
+Key Features:
+
+- Storyblok: Headless CMS used to create and manage content
+- Storyblok React SDK: React plugin needed to interact with Storyblok APIs
+- Next.js: Framework for server-rendered React applications.
+- next-i18n-router: Library adds back internationalized routing to Nextjs
+- local-ssl-proxy: Simple SSL HTTP proxy using a self-signed certificate
+- Tailwind CSS: Utility-first CSS framework for styling.
+- TypeScript: Ensures type safety throughout the project.
+- Eslint: Maintains code quality and consistency.
+- PostCSS: Used alongside Tailwind for processing CSS.
+
+.env variables:
+
+- STORYBLOCK_PREVIEW_ACCESS_TOKEN = \*\*\*\*
+- PREVIEW_SECRET = \*\*\*\*
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -14,7 +35,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
