@@ -19,6 +19,8 @@ Key Features:
 - NEXT_PUBLIC_STORYBLOCK_PREVIEW_ACCESS_TOKEN = \*\*\*\*
 - PREVIEW_SECRET = \*\*\*\*
 
+Sample App hosted on Vercel: [Storyblok-nextjs-sample](https://storyblok-nextjs-sample.vercel.app/)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
