@@ -1,14 +1,14 @@
 import ArticleTeaser from "./ArticleTeaser";
 import { storyblokEditable } from "@storyblok/react";
-import { getStoryblokApi } from "@storyblok/react/rsc";
 import { Suspense } from "react";
 import Skeleton from "./Skeleton";
 import { StoryBlokComponentType } from "@/app/types/storyblok";
+import { getStoryblokApi } from "@/lib/api/storyblok/storyblok";
 
 const getArticles = async () => {
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.getStories({
-    version: "draft",
+    version: "published",
     starts_with: "blog/",
     is_startpage: false,
   });
