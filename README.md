@@ -9,6 +9,7 @@ Key Features:
 - Next.js: Framework for server-rendered React applications.
 - next-i18n-router: Library adds back internationalized routing to Nextjs
 - local-ssl-proxy: Simple SSL HTTP proxy using a self-signed certificate
+- react-slick: Carousel component
 - Tailwind CSS: Utility-first CSS framework for styling.
 - TypeScript: Ensures type safety throughout the project.
 - Eslint: Maintains code quality and consistency.
