@@ -11,8 +11,9 @@ const Hero = ({ blok }: { blok: StoryBlokComponentType }) => {
    flex
    items-center
    justify-center
-   p-9
+   px-9
    my-6
+   mb-14
    rounded-[5px]
    overflow-hidden ${blok.layout === "constrained" ? "container mx-auto" : ""}`}
     >

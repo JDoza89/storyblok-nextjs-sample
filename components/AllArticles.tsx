@@ -44,7 +44,7 @@ const AllArticlesContent = async ({
 
 const AllArticlesSkeleton = () => {
   return (
-    <div className="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3 lg:px-24 md:px-16">
+    <div className="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3 lg:px-24 md:px-16 pb-14">
       {Array.from({ length: 6 }).map((_, index) => {
         return (
           <div key={index} className="p-4 space-y-4 w-full mb-8">

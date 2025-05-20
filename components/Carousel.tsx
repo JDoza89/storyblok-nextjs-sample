@@ -29,7 +29,7 @@ const Carousel = ({ blok }: { blok: CarouselProps }) => {
   };
 
   return (
-    <div className="px-5 py-10">
+    <div className="px-5 pb-14">
       <h2 className="pb-5">{title}</h2>
       <Slider {...settings} {...storyblokEditable(blok)}>
         {blok?.features?.map((feature) => {
@@ -38,6 +38,7 @@ const Carousel = ({ blok }: { blok: CarouselProps }) => {
               <div className="relative w-[280px] h-[370px] m-auto">
                 <Image
                   src={feature?.image?.filename}
+                  title={feature?.name}
                   alt={feature?.image?.alt}
                   className="object-cover object-center rounded"
                   fill
@@ -45,7 +46,6 @@ const Carousel = ({ blok }: { blok: CarouselProps }) => {
                   quality={75}
                 />
               </div>
-              <h3>{feature?.name}</h3>
             </Link>
           );
         })}

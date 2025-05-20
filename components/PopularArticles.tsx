@@ -4,10 +4,10 @@ import { storyblokEditable } from "@storyblok/react";
 
 const PopularArticles = ({ blok }: { blok: StoryBlokComponentType }) => {
   return (
-    <>
+    <div className="pb-14">
       <h2 className="text-3xl">{blok.headline}</h2>
       <div
-        className="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3   lg:px-24 md:px-16"
+        className="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3 lg:px-24 md:px-16"
         {...storyblokEditable(blok)}
       >
         {blok?.articles?.length
@@ -25,7 +25,7 @@ const PopularArticles = ({ blok }: { blok: StoryBlokComponentType }) => {
             })
           : null}
       </div>
-    </>
+    </div>
   );
 };
 export default PopularArticles;
