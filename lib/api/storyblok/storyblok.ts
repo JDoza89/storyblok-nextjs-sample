@@ -13,7 +13,7 @@ import PopularArticles from "../../../components/PopularArticles";
 import Carousel from "@/components/Carousel";
 
 export const getStoryblokApi = storyblokInit({
-  accessToken: process.env.STORYBLOCK_PREVIEW_ACCESS_TOKEN,
+  accessToken: process.env.NEXT_PUBLIC_STORYBLOCK_PREVIEW_ACCESS_TOKEN,
   use: [apiPlugin],
   components: {
     feature: Feature,
