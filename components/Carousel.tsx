@@ -30,7 +30,7 @@ const Carousel = ({ blok }: { blok: CarouselProps }) => {
 
   return (
     <div className="px-5 pb-14">
-      <h2 className="pb-5">{title}</h2>
+      <h2 className="text-2xl lg:text-3xl pb-5">{title}</h2>
       <Slider {...settings} {...storyblokEditable(blok)}>
         {blok?.features?.map((feature) => {
           return (

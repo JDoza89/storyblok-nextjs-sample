@@ -15,7 +15,7 @@ const ArticleTeaser = ({ article }: { article: StoryBlokComponentType }) => {
             height={200}
           />
         ) : null}
-        <h2 className="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
+        <h2 className="mx-auto mb-8 font-semibold leading-none tracking-tighter text-neutral-600">
           {article.title}
         </h2>
         <div className="mx-auto text-base leading-relaxed text-gray-500 line-clamp-2">
@@ -24,7 +24,7 @@ const ArticleTeaser = ({ article }: { article: StoryBlokComponentType }) => {
         <div className="mt-4">
           <Link
             href={`/blog/${article.slug}`}
-            className="inline-flex items-center mt-4 font-semibold text-blue-600 lg:mb-0 hover:text-neutral-600"
+            className="inline-flex items-center mt-4 font-semibold lg:mb-0 hover:text-neutral-600"
             title="read more"
           >
             Read More »

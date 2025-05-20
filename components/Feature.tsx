@@ -20,7 +20,7 @@ const Feature = ({ blok }: { blok: StoryBlokComponentType }) => {
             ) : null}
           </Link>
         ) : null}
-        <h2 className="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
+        <h2 className="mx-auto mb-8 font-semibold leading-none tracking-tighter text-neutral-600">
           {blok.name}
         </h2>
       </div>
