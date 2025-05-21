@@ -4,7 +4,7 @@ import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
 import Carousel from "@/components/Carousel";
 import Feature from "@/components/Feature";
 
-let initialized = false;
+const initialized = false;
 
 // Re-initalize the connection with Storyblok client side -
 // but only with components that are used in the client side

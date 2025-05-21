@@ -5,6 +5,7 @@ export default async function Home(props: {
   params: Promise<{ lang: string }>;
 }) {
   const { isEnabled } = await draftMode();
+  console.log("isEnabled", isEnabled);
   const { params } = props;
   const { lang } = await params;
   const pageData = await fetchStory("home", lang, isEnabled);

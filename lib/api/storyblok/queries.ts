@@ -8,7 +8,7 @@ export const fetchStory = async (
 ) => {
   const client: StoryblokClient = getStoryblokApi();
   const response = await client.getStory(slug, {
-    version: "draft",
+    version: draftMode ? "draft" : "published",
     resolve_relations: ["popularArticles.articles"],
     language: language || "en-US",
   });

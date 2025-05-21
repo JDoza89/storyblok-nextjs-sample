@@ -10,7 +10,7 @@ const getArticles = async () => {
   const { isEnabled } = await draftMode();
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.getStories({
-    version: "draft",
+    version: isEnabled ? "draft" : "published",
     starts_with: "blog/",
     is_startpage: false,
   });
