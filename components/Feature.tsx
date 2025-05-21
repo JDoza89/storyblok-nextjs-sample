@@ -10,13 +10,17 @@ const Feature = ({ blok }: { blok: StoryBlokComponentType }) => {
         {blok?.link?.cached_url ? (
           <Link href={blok?.link?.cached_url} title={blok?.name}>
             {blok?.image?.filename ? (
-              <Image
-                className="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl"
-                src={blok?.image?.filename}
-                alt="feature"
-                width={200}
-                height={400}
-              />
+              <div className="relative w-[280px] h-[370px] m-auto">
+                <Image
+                  src={blok?.image?.filename}
+                  title={blok?.name}
+                  alt={blok?.image?.alt}
+                  className="object-cover object-center rounded"
+                  fill
+                  sizes="(max-width: 370px)"
+                  quality={75}
+                />
+              </div>
             ) : null}
           </Link>
         ) : null}

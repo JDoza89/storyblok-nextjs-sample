@@ -1,6 +1,9 @@
 "use client";
 
-import { storyblokEditable } from "@storyblok/react/rsc";
+import {
+  storyblokEditable,
+  StoryblokServerComponent,
+} from "@storyblok/react/rsc";
 import React from "react";
 import Image from "next/image";
 import Slider from "react-slick";
@@ -29,26 +32,12 @@ const Carousel = ({ blok }: { blok: CarouselProps }) => {
   };
 
   return (
-    <div className="px-5 pb-14">
+    <div className="px-5 pb-14" {...storyblokEditable(blok)}>
       <h2 className="text-2xl lg:text-3xl pb-5">{title}</h2>
-      <Slider {...settings} {...storyblokEditable(blok)}>
-        {blok?.features?.map((feature) => {
-          return (
-            <Link href={feature?.link?.cached_url} key={blok?.uuid}>
-              <div className="relative w-[280px] h-[370px] m-auto">
-                <Image
-                  src={feature?.image?.filename}
-                  title={feature?.name}
-                  alt={feature?.image?.alt}
-                  className="object-cover object-center rounded"
-                  fill
-                  sizes="(max-width: 370px)"
-                  quality={75}
-                />
-              </div>
-            </Link>
-          );
-        })}
+      <Slider {...settings}>
+        {blok?.features?.map((nestedBlok: any) => (
+          <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
+        ))}
       </Slider>
     </div>
   );

@@ -12,22 +12,24 @@ import AllArticles from "@/components/AllArticles";
 import PopularArticles from "../../../components/PopularArticles";
 import Carousel from "@/components/Carousel";
 
+export const storyblokComponents = {
+  feature: Feature,
+  grid: Grid,
+  teaser: Teaser,
+  page: Page,
+  headerMenu: HeaderMenu,
+  menuLink: MenuLink,
+  config: Config,
+  hero: Hero,
+  article: Article,
+  allArticles: AllArticles,
+  popularArticles: PopularArticles,
+  carousel: Carousel,
+};
+
 export const getStoryblokApi = storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOCK_PREVIEW_ACCESS_TOKEN,
   use: [apiPlugin],
-  components: {
-    feature: Feature,
-    grid: Grid,
-    teaser: Teaser,
-    page: Page,
-    headerMenu: HeaderMenu,
-    menuLink: MenuLink,
-    config: Config,
-    hero: Hero,
-    article: Article,
-    allArticles: AllArticles,
-    popularArticles: PopularArticles,
-    carousel: Carousel,
-  },
+  components: storyblokComponents,
   enableFallbackComponent: true,
 });

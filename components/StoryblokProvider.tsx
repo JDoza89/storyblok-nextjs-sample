@@ -1,7 +1,9 @@
 "use client";
-import { getStoryblokApi as getStoryblokApi } from "@/lib/api/storyblok/storyblok";
+
+import { getClientStoryblokApi } from "@/lib/api/storyblok/clientSideStoryblok";
 
 export const StoryblokProvider = ({ children }: React.PropsWithChildren) => {
-  getStoryblokApi();
+  getClientStoryblokApi();
+  //getStoryblokApi();
   return children;
 };
