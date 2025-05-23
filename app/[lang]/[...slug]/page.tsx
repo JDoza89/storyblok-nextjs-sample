@@ -31,6 +31,5 @@ export default async function Page(props: {
   const { params } = props;
   const { slug, lang } = await params;
   const pageData = await fetchStory(slug.join("/"), lang, isEnabled);
-
   return <StoryblokStory story={pageData} />;
 }
