@@ -38,7 +38,7 @@ export const StoryblokPreviewSyncer: FC<Props> = ({
         onInput: handleInput,
       });
     })();
-  }, []);
+  }, [handleInput]);
 
   return null;
 };

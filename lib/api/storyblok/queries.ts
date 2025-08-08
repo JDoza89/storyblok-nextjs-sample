@@ -1,6 +1,5 @@
 import { getStoryblokApi } from "@/lib/api/storyblok/storyblok";
 import { StoryblokClient } from "@storyblok/react/rsc";
-import type { ISbStoryData, ISbComponentType } from "storyblok-js-client";
 export const fetchStory = async (
   slug: string,
   language?: string,

@@ -1,7 +1,6 @@
 import Config from "@/components/Config";
 import DraftModeWrapper from "@/components/DraftModeWrapper";
 import Footer from "@/components/Footer";
-import { StoryblokProvider } from "@/components/StoryblokProvider";
 import { fetchStory } from "@/lib/api/storyblok/queries";
 import { Metadata } from "next";
 
