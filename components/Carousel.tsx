@@ -1,4 +1,7 @@
-// components/FeatureCarousel.server.tsx
+// This "wrapper" component was created to allow the nested Carousel items to be rendered server-side
+// while still allowing the Carousel itself to be a client-side component.
+// This is necessary because Storyblok's client-side components need to be registered for the visual editor
+// We do this to avoid having to re-register the Carousel nested components client-side
 
 import { StoryblokServerComponent } from "@storyblok/react/rsc";
 import CarouselClient from "./CarouselClient";

@@ -1,8 +1,8 @@
-import Feature from "@/components/Feature";
+// This route is meant to be used to load draft content in the Storyblok visual editor
 import { StoryblokPreviewSyncer } from "@/components/Storyblok/StoryblokPreviewSyncer";
 import { fetchPreviewData } from "@/lib/api/storyblok/queries";
 import { verifyPreviewToken } from "@/lib/utils/preview";
-import { setComponents, StoryblokServerComponent } from "@storyblok/react/rsc";
+import { StoryblokServerComponent } from "@storyblok/react/rsc";
 import { notFound } from "next/navigation";
 import type { FC } from "react";
 
@@ -17,10 +17,6 @@ type Props = {
 };
 
 const PreviewPage: FC<Props> = async ({ params, searchParams }) => {
-  //register all components that are nestable in client components (ex: items within a carousel)
-  setComponents({
-    feature: Feature,
-  });
   const { slug } = await params;
   const {
     "_storyblok_tk[token]": previewToken,

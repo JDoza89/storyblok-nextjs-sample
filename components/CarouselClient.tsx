@@ -1,9 +1,7 @@
 "use client";
 
-import {
-  storyblokEditable,
-  StoryblokServerComponent,
-} from "@storyblok/react/rsc";
+//Client side logic for the Carousel component
+import { storyblokEditable } from "@storyblok/react/rsc";
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
