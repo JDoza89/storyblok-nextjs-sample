@@ -1,7 +1,7 @@
 "use client";
 
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
-import Carousel from "@/components/Carousel";
+import Carousel from "@/components/CarouselClient";
 import Feature from "@/components/Feature";
 
 const initialized = false;
