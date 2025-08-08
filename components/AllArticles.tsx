@@ -4,13 +4,13 @@ import { Suspense } from "react";
 import Skeleton from "./Skeleton";
 import { StoryBlokComponentType } from "@/app/types/storyblok";
 import { getStoryblokApi } from "@/lib/api/storyblok/storyblok";
-import { draftMode } from "next/headers";
+//import { draftMode } from "next/headers";
 
 const getArticles = async () => {
-  const { isEnabled } = await draftMode();
+  //const { isEnabled } = await draftMode();
   const storyblokApi = getStoryblokApi();
   const { data } = await storyblokApi.getStories({
-    version: isEnabled ? "draft" : "published",
+    version: "draft", //isEnabled ? "draft" : "published",
     starts_with: "blog/",
     is_startpage: false,
   });

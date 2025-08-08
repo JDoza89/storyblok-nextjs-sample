@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  setComponents,
   storyblokEditable,
   StoryblokServerComponent,
 } from "@storyblok/react/rsc";

@@ -12,5 +12,9 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <StoryblokProvider>{children}</StoryblokProvider>;
+  return (
+    <html lang={"en"}>
+      <body className={"m-auto"}>{children}</body>
+    </html>
+  );
 }

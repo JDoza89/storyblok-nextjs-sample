@@ -13,10 +13,10 @@ import PopularArticles from "../../../components/PopularArticles";
 import Carousel from "@/components/Carousel";
 
 export const storyblokComponents = {
+  page: Page,
   feature: Feature,
   grid: Grid,
   teaser: Teaser,
-  page: Page,
   headerMenu: HeaderMenu,
   menuLink: MenuLink,
   config: Config,

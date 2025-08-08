@@ -27,6 +27,7 @@ export const generateStaticParams = async () => {
 export default async function Page(props: {
   params: Promise<{ lang: string; slug: string[] }>;
 }) {
+  console.log("main");
   const { isEnabled } = await draftMode();
   const { params } = props;
   const { slug, lang } = await params;
