@@ -14,7 +14,7 @@ const getArticles = async () => {
     starts_with: "blog/",
     is_startpage: false,
   });
-  //await new Promise((resolve) => setTimeout(resolve, 3000));
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   return data?.stories?.map((story) => {
     story.content.slug = story.slug;
     return story;

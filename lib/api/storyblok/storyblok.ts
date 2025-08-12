@@ -11,6 +11,7 @@ import Article from "@/components/Article";
 import AllArticles from "@/components/AllArticles";
 import PopularArticles from "../../../components/PopularArticles";
 import Carousel from "@/components/Carousel";
+import Filters from "@/components/Filters";
 
 export const storyblokComponents = {
   feature: Feature,
@@ -25,6 +26,7 @@ export const storyblokComponents = {
   allArticles: AllArticles,
   popularArticles: PopularArticles,
   carousel: Carousel,
+  filters: Filters,
 };
 
 export const getStoryblokApi = storyblokInit({

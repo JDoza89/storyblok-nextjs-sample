@@ -1,8 +1,6 @@
 "use client";
 
 import { apiPlugin, storyblokInit } from "@storyblok/react/rsc";
-import Carousel from "@/components/Carousel";
-import Feature from "@/components/Feature";
 
 const initialized = false;
 
@@ -18,7 +16,6 @@ export const getClientStoryblokApi = () => {
   if (!initialized) {
     storyblokInit({
       accessToken: process.env.NEXT_PUBLIC_STORYBLOCK_PREVIEW_ACCESS_TOKEN,
-      components: { carousel: Carousel, feature: Feature },
       use: [apiPlugin],
       enableFallbackComponent: true,
     });

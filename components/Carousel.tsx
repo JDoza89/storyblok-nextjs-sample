@@ -1,44 +1,27 @@
-"use client";
-
-import {
-  storyblokEditable,
-  StoryblokServerComponent,
-} from "@storyblok/react/rsc";
+import { StoryblokServerComponent } from "@storyblok/react/rsc";
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { StoryBlokComponentType } from "@/app/types/storyblok";
+import CarouselClient from "./CarouselClient";
 
 type CarouselProps = StoryBlokComponentType & {
   title: string;
   itemsPerSlide: any;
   features: { name: string; link: any; image: any }[];
 };
-const Carousel = ({ blok }: { blok: CarouselProps }) => {
-  const { title, itemsPerSlide } = blok;
-  const settings = {
-    arrows: true,
-    dots: false,
-    centerMode: true,
-    infinite: true,
-    centerPadding: "0",
-    slidesToShow: parseInt(itemsPerSlide),
-    slidesToScroll: 1,
-    ssr: true,
-    className: "carousel",
-  };
-
+function FeatureCarousel({ blok }: { blok: any }) {
   return (
-    <div className="px-5 pb-14" {...storyblokEditable(blok)}>
-      <h2 className="text-2xl lg:text-3xl pb-5">{title}</h2>
-      <Slider {...settings}>
-        {blok?.features?.map((nestedBlok: any) => (
-          <StoryblokServerComponent blok={nestedBlok} key={nestedBlok._uid} />
-        ))}
-      </Slider>
-    </div>
+    <>
+      {blok.features?.map((feature: any) => (
+        <StoryblokServerComponent blok={feature} key={feature._uid} />
+      ))}
+    </>
   );
-};
+}
 
-export default Carousel;
+export default function Carousel({ blok }: { blok: CarouselProps }) {
+  return (
+    <CarouselClient blok={blok}>
+      <FeatureCarousel blok={blok} />
+    </CarouselClient>
+  );
+}
