@@ -1,11 +1,18 @@
 import { cookies, draftMode } from "next/headers";
 import { redirect } from "next/navigation";
 
+function stripPrefix(prefix: string, text: string) {
+  return text.startsWith(prefix)
+    ? text.slice(prefix.length).replace(/^\/+/, "")
+    : text;
+}
+
 export async function GET(request: Request) {
   // Parse query string parameters
   const { searchParams } = new URL(request.url);
   const secret = searchParams.get("secret");
   const slug = searchParams.get("slug") || "/";
+  const lang = searchParams.get("_storyblok_lang") || "en";
   if (secret !== process.env.PREVIEW_SECRET || !slug) {
     return new Response("Invalid token", { status: 401 });
   }
@@ -21,5 +28,6 @@ export async function GET(request: Request) {
     sameSite: "none",
     secure: true,
   });
-  redirect(`${slug}?${searchParams.toString()}`);
+  const strippedSlug = stripPrefix(lang, slug);
+  redirect(`/${lang}/preview/${strippedSlug}?${searchParams.toString()}`);
 }

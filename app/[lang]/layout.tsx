@@ -23,15 +23,13 @@ export default async function RootLayout({
   const lang = (await params).lang ?? "en-US";
   const pageData = await fetchStory("config", lang);
   return (
-    <StoryblokProvider>
-      <html lang={lang}>
-        <body className={"m-auto"}>
-          <DraftModeWrapper />
-          <Config blok={pageData.content} />
-          {children}
-          <Footer />
-        </body>
-      </html>
-    </StoryblokProvider>
+    <html lang={lang}>
+      <body className={"m-auto"}>
+        <DraftModeWrapper />
+        <Config blok={pageData.content} />
+        {children}
+        <Footer />
+      </body>
+    </html>
   );
 }
