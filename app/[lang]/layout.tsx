@@ -1,7 +1,7 @@
 import Config from "@/components/Config";
 import DraftModeWrapper from "@/components/DraftModeWrapper";
 import Footer from "@/components/Footer";
-import { StoryblokProvider } from "@/components/StoryblokProvider";
+import { draftMode } from "next/headers";
 import { fetchStory } from "@/lib/api/storyblok/queries";
 import { Metadata } from "next";
 
@@ -22,10 +22,11 @@ export default async function RootLayout({
 }>) {
   const lang = (await params).lang ?? "en-US";
   const pageData = await fetchStory("config", lang);
+  const { isEnabled } = await draftMode();
   return (
     <html lang={lang}>
       <body className={"m-auto"}>
-        <DraftModeWrapper />
+        <DraftModeWrapper enabled={isEnabled} />
         <Config blok={pageData.content} />
         {children}
         <Footer />

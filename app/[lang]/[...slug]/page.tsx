@@ -2,7 +2,6 @@ import { fetchStory } from "@/lib/api/storyblok/queries";
 import { getStoryblokApi } from "@/lib/api/storyblok/storyblok";
 import { supportedLanguages } from "@/lib/constants";
 import { StoryblokClient, StoryblokStory } from "@storyblok/react/rsc";
-import { draftMode } from "next/headers";
 import React from "react";
 
 //statically generate routes at build time instead of on-demand at request time
@@ -27,9 +26,8 @@ export const generateStaticParams = async () => {
 export default async function Page(props: {
   params: Promise<{ lang: string; slug: string[] }>;
 }) {
-  const { isEnabled } = await draftMode();
   const { params } = props;
   const { slug, lang } = await params;
-  const pageData = await fetchStory(slug.join("/"), lang, isEnabled);
+  const pageData = await fetchStory(slug.join("/"), lang, false);
   return <StoryblokStory story={pageData} />;
 }

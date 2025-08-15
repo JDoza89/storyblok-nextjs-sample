@@ -1,16 +1,19 @@
-import { draftMode } from "next/headers";
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-const DraftModeWrapper = async ({
+const DraftModeWrapper = ({
   children,
+  enabled,
 }: {
   children?: React.ReactNode;
+  enabled?: boolean;
 }) => {
-  const { isEnabled } = await draftMode();
+  const pathname = usePathname();
 
   return (
     <>
-      {isEnabled ? (
+      {enabled ? (
         <>
           <div className="sticky top-0 left-0 z-50 w-full h-16 bg-black border-b border-gray-200 shadow-sm">
             <div className="flex items-center justify-between h-full px-8">
@@ -18,7 +21,7 @@ const DraftModeWrapper = async ({
               <Link
                 prefetch={false}
                 className="text-white"
-                href="/api/exit-draft"
+                href={`/api/exit-draft?pathname=${pathname}`}
               >
                 Exit Preview
               </Link>

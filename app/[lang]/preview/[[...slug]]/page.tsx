@@ -5,7 +5,6 @@ export default async function PreviewPage(props: {
 }) {
   const { params } = props;
   const { slug, lang } = await params;
-  console.log(params);
   const pageData = await fetchStory(slug?.join("/") || "home", lang, true);
   return <StoryblokStory story={pageData} />;
 }
